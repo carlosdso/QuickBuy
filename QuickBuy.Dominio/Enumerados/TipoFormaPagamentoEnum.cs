@@ -7,5 +7,6 @@
         CartaoCredito = 2,
         Deposito = 3,
         NaoFoiDefido = 4,
+        NaoFoiDefinido = 5,
     }
 }
