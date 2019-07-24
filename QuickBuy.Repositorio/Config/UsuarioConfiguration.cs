@@ -8,7 +8,7 @@ namespace QuickBuy.Repositorio.Config
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.HasKey(u => u. Id);
+            builder.HasKey(u => u.Id);
 
             //Builder utiliza o padrão fluent
             builder
@@ -27,16 +27,14 @@ namespace QuickBuy.Repositorio.Config
                 .HasMaxLength(50);
 
             builder
-                .Property(u => u.sobreNome)
+                .Property(u => u.SobreNome)
                 .IsRequired()
                 .HasMaxLength(50);
 
-            //builder.Property(u => u.Pedido);
+            builder
+                .HasMany(u => u.Pedidos)
+                .WithOne(p => p.Usuario);
 
-                
-                
-                
-            
 
 
         }

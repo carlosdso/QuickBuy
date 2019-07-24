@@ -8,17 +8,20 @@ namespace QuickBuy.Dominio.Entidades
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Nome { get; set; }
-        public string sobreNome { get; set; }
+        public string SobreNome { get; set; }
 
 /// <summary>
-/// Pedido deve ter pelo menos um pedido
-/// ou muitos pedidos
+/// Um Usuario Pode ter nenhum ou muitos pedidos
 /// </summary>
-        public ICollection<Pedido> Pedidos { get; set; }
+        public virtual ICollection<Pedido> Pedidos { get; set; }
 
         public override void Validate()
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(Email))
+                AdicionarCritica("Email não foi informado");
+
+            if (string.IsNullOrEmpty(Senha))
+                AdicionarCritica("Senha não foi informado");
         }
     }
 }

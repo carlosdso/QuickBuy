@@ -1,4 +1,4 @@
-﻿using QuickBuy.Dominio.Contratos;
+﻿    using QuickBuy.Dominio.Contratos;
 using QuickBuy.Dominio.Entidades;
 
 namespace QuickBuy.Repositorio.Repositorios
@@ -10,8 +10,8 @@ namespace QuickBuy.Repositorio.Repositorios
             var usuarioRepositorio = new UsuarioRepositorio();
             var produto = new Produto();
             var usuario = new Usuario();
-            
-            usuarioRepositorio.Adicionar(usuario)
+
+            usuarioRepositorio.Adicionar(usuario);
         }
     }
 }

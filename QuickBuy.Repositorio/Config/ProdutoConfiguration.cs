@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using QuickBuy.Dominio.Entidades;
 
@@ -22,8 +22,8 @@ namespace QuickBuy.Repositorio.Config
 
             builder
                 .Property(p => p.Preco)
-                .IsRequired()
-                .HasMaxLength(50);
+                .IsRequired();
+                
 
         }
     }

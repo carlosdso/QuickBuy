@@ -14,6 +14,7 @@ namespace QuickBuy.Dominio.Entidades
 
         public  DateTime DataPedido { get; set; }
         public int UsuarioId { get; set; }
+        public virtual Usuario Usuario { get; set; }
         public DateTime DataPevisaoEntrega { get; set; }
         public string CEP { get; set; }
         public string Estado { get; set; }
@@ -29,6 +30,7 @@ namespace QuickBuy.Dominio.Entidades
         /// </summary>
 
         public ICollection<ItemPedido> ItensPedido { get; set; }
+        public object Nome { get; set; }
 
         public override void Validate()
         {
@@ -39,6 +41,9 @@ namespace QuickBuy.Dominio.Entidades
             
             if (string.IsNullOrEmpty(CEP))
             AdicionarCritica("Critica - CEP deve estar preenchido");
+
+            if (FormaPagamentoId == 0)
+                AdicionarCritica("Critica - Não foi informado o pagamento");
         }
     }
 }
