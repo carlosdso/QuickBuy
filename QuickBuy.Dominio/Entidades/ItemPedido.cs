@@ -14,5 +14,7 @@
             if (Quantidade == 0)
                 AdicionarCritica("Quantidade não foi informada");
 
-        }  
-           
+        }
+
+    }
+}

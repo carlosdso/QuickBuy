@@ -2,7 +2,7 @@
 {
     public enum TipoFormaPagamentoEnum
     {
-        Nao Definido = 0,
+        Nao_Definido = 0,
         Beleto = 1,
         CartaoCredito = 2,
         Deposito = 3,

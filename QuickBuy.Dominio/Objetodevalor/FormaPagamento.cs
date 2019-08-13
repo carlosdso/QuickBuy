@@ -37,4 +37,4 @@ namespace QuickBuy.Dominio.Objetodevalor
             throw new System.NotImplementedException();
         }
     }
-}.
+}

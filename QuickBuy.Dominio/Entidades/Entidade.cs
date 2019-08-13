@@ -1,14 +1,14 @@
-﻿ using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace QuickBuy.Dominio.Entidades
 {
-     public abstract class Entidade
+    public abstract class Entidade
     {
         private string mensagem;
 
         private List<string> _mensagensValidacao { get; set; }
-        private  List<string> mensagemValidacao
+        private List<string> mensagemValidacao
         {
             get { return _mensagensValidacao ?? (_mensagensValidacao = new List<string>()); }
         }
@@ -20,15 +20,16 @@ namespace QuickBuy.Dominio.Entidades
 
         protected void AdicionarCritica(string mensagem)
         {
-            mensagemValidacao.Add(mensagem);    
+            mensagemValidacao.Add(mensagem);
         }
 
         public abstract void Validate();
-       protected bool EhValido
+        protected bool EhValido
 
         {
             get { return !mensagemValidacao.Any(); }
+        }
+
+
     }
-
-
 }

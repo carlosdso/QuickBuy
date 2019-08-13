@@ -17,7 +17,7 @@ namespace QuickBuy.Web
         public Startup(IConfiguration configuration)
         {
             var builder = new ConfigurationBuilder();
-            builder.AddJsonFile("confg.json", optional: false, reloadOnChange: true);
+            builder.AddJsonFile("config.json", optional: false, reloadOnChange: true);
             Configuration = builder.Build();
         }
 
@@ -27,7 +27,7 @@ namespace QuickBuy.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            var connectionString = Configuration.GetConnectionString("QuickBuyDB");
+            var connectionString = Configuration.GetValue<string>("ConnectionString:QuickBuyDB") ;
             services.AddDbContext<QuickBuyContexto>(option =>
                                                         option.UseLazyLoadingProxies() 
                                                         .UseMySql(connectionString,
