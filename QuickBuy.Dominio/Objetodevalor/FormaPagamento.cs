@@ -11,7 +11,7 @@ namespace QuickBuy.Dominio.Objetodevalor
 
         public bool EhBoleto
         {
-            get { return Id  == (int)TipoFormaPagamentoEnum.Beleto; }
+            get { return Id  == (int)TipoFormaPagamentoEnum.Boleto; }
         }
 
              
